@@ -29,7 +29,7 @@ object SQLContextApp {
     val sc = new SparkContext(sparkConf)
     val sqlContext = new SQLContext(sc)
 
-    // 2)相应的处理
+    // 2)相应的处理:json
     val people = sqlContext.read.format("json").load(path)
     people.printSchema()
     people.show()
